@@ -101,3 +101,9 @@ This taught me that:
 * Physical Device
 
 can sometimes display UI slightly differently due to system UI, display cutouts, and device-specific settings.
+
+## Note
+
+The observations and learning points documented in this README are based on my own implementation experience while completing the project and comparing it with the official Android Developers solution.
+
+To improve readability and presentation, I shared my notes and observations with ChatGPT, which helped me organize and rewrite them in a clearer, more structured, and professional manner. The learning points, mistakes, comparisons, and conclusions described above reflect my own understanding developed while building the project.
