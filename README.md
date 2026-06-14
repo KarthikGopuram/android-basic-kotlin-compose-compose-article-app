@@ -1,3 +1,24 @@
+# Compose Article
+
+A simple Jetpack Compose application built as part of the **Android Basics with Compose** course.
+
+## Screenshot
+
+<p align="center">
+  <img src="screenshot/compose-article.png" alt="Compose Article App Screenshot" width="300"/>
+</p>
+
+## Features
+
+* Displays an article image
+* Displays an article title and content
+* Uses Jetpack Compose layouts and modifiers
+* Demonstrates text formatting using `TextAlign.Justify`
+* Uses string and drawable resources
+* Built with Material 3 and Jetpack Compose
+
+---
+
 ## Learning Process and Observations
 
 While building this project, I used my previous **Happy Birthday Compose App** as a reference because many concepts were similar, such as Images, Text, Modifiers, and Composable functions.
@@ -8,13 +29,13 @@ However, after comparing the expected output with my preview, I realized that th
 
 ### Why I Changed from Box to Column
 
-**Happy Birthday App**
+#### Happy Birthday App
 
 * Image is used as a background.
 * Text is displayed on top of the image.
 * `Box` is the correct choice because the elements need to overlap.
 
-**Compose Article App**
+#### Compose Article App
 
 * Image is displayed first.
 * Title appears below the image.
@@ -22,7 +43,7 @@ However, after comparing the expected output with my preview, I realized that th
 * No overlapping is required.
 * `Column` is the correct choice because elements are arranged vertically.
 
-As soon as I realized the output required a vertical arrangement instead of overlapping content, I replaced `Box` with `Column`, and the layout immediately matched the expected design.
+As soon as I realized the output required a vertical arrangement instead of overlapping content, I replaced `Box` with `Column`. This change immediately brought my layout much closer to the expected design and helped me understand the practical difference between these two layout composables.
 
 ### Text Alignment Learning
 
@@ -32,7 +53,7 @@ Initially, I used:
 Modifier.align(Alignment.CenterHorizontally)
 ```
 
-Later, after comparing my solution with the official solution, I learned that this only changes the position of the Text composable inside its parent layout.
+Later, after comparing my solution with the official solution, I learned that this only changes the position of the `Text` composable inside its parent layout.
 
 The official solution used:
 
@@ -40,31 +61,32 @@ The official solution used:
 textAlign = TextAlign.Justify
 ```
 
-This formats the text itself and makes paragraphs look like a proper article.
+This formats the text itself and makes paragraphs appear more like a properly formatted article.
 
-**Key takeaway:**
+#### Key Takeaway
 
 * `Modifier.align(...)` → Layout alignment
 * `TextAlign.Justify` → Text formatting
 
 ### My Solution vs Official Solution
 
-My approach:
+#### My Approach
 
-* Created separate composables:
+Created separate composables:
 
-  * `ComposeArticleImage()`
-  * `ComposeArticleText()`
+* `ComposeArticleImage()`
+* `ComposeArticleText()`
 
-Official solution:
+#### Official Solution
 
-* Used a single composable (`ArticleCard`) containing both the Image and Text components.
+Used a single composable (`ArticleCard`) containing both the Image and Text components.
 
-Observation:
+#### Observation
 
 * Both approaches work correctly.
 * The official solution is more compact for a small screen.
 * My approach helped me better understand composable decomposition and component separation.
+* Comparing both implementations helped me understand that there can be multiple valid ways to solve the same UI problem.
 
 ### Modifier Learning
 
@@ -86,7 +108,9 @@ I learned that:
 * It allows composables to be customized by their caller.
 * If a modifier parameter is declared but never used, Android Studio shows:
 
-  * `Parameter 'modifier' is never used`
+```text
+Parameter 'modifier' is never used
+```
 
 ### Additional Observation
 
@@ -100,7 +124,43 @@ This taught me that:
 * Android Emulator
 * Physical Device
 
-can sometimes display UI slightly differently due to system UI, display cutouts, and device-specific settings.
+can sometimes display UI slightly differently due to system UI behavior, display cutouts, screen configurations, and device-specific settings.
+
+---
+
+## Concepts Practiced
+
+* Composable Functions
+* Column Layout
+* Image Composable
+* Text Composable
+* Modifiers
+* Resource Management
+* String Resources
+* Text Alignment
+* Compose Preview
+* Material 3
+
+---
+
+## Technologies Used
+
+* Kotlin
+* Jetpack Compose
+* Android Studio
+* Material 3
+
+---
+
+## Reference
+
+Official Android Developers solution used for comparison and learning:
+
+[Official Android Developers Compose Article Solution](https://github.com/google-developer-training/basic-android-kotlin-compose-training-practice-problems/blob/main/Unit%201/Pathway%203/ComposeArticle/app/src/main/java/com/example/composearticle/MainActivity.kt)
+
+I completed the project independently before reviewing the official implementation. After comparing both solutions, I documented the differences, observations, and lessons learned in this README.
+
+---
 
 ## Note
 
